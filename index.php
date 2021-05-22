@@ -51,8 +51,6 @@
 		});
 
 		$('.btnCalculator').click( ()=>{
-			console.log('here');
-			console.log($('input[name="operator"]:checked').val());
 			$.ajax({
 				url:'calcular.php',
 				method: 'POST',
@@ -63,6 +61,7 @@
 					operator : $('input[name="operator"]:checked').val(),
 				},
 				success: function(e){
+					console.log(e);
 					$('.container').html(e);
 				}
 
